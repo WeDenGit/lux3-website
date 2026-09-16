@@ -1,0 +1,176 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('Minecraft.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.season-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin-bottom: 40px;
+    /* Optional: Adds a slight sepia tone if your image isn't already sepia */
+    /* filter: sepia(0.8) brightness(0.8); */
+}
+
+.text-lines {
+    text-align: center;
+    color: white;
+    font-family: 'Minecraft', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.text-lines p {
+    margin: 0 0 20px 0;
+}
+
+.text-lines p:last-child {
+    margin-bottom: 0;
+}
+
+.back-button {
+    position: fixed; 
+    bottom: 30px;
+    right: 30px;
+    color: white;
+    font-family: 'Minecraft', sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    z-index: 1000; 
+    background-color: black; 
+    display: inline-block; 
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.floating-image {
+    width: 100%;
+    max-width: 300px; 
+    height: auto;
+    display: block;
+    margin-bottom: 40px;
+    /* This applies the floating animation */
+    animation: floatUpDown 3s ease-in-out infinite;
+}
+
+/* This is for the Rift's Squash and Strench thing incase I forget cause this was lowkey ASS */
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.rift-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transform-origin: center center;
+}
+
+.squash-stretch {
+    animation: squashStretch 0.8s ease-in-out;
+}
+
+@keyframes squashStretch {
+    0% { transform: scale(1, 1); }
+    20% { transform: scale(1.3, 0.7); }
+    40% { transform: scale(0.8, 1.3); }
+    60% { transform: scale(1.1, 0.9); }
+    80% { transform: scale(0.95, 1.05); }
+    100% { transform: scale(1, 1); }
+}
+
+
+.terminal-screen {
+    width: 100%;
+    max-width: 800px;
+    color: #33FF33; 
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.terminal-screen .timestamp {
+    color: #AAAAAA; 
+    margin-bottom: 20px;
+    display: block;
+}
+
+.terminal-screen .bold {
+    color: #55FF55; 
+    font-weight: bold;
+}
+
+.terminal-screen p {
+    margin: 0 0 10px 0;
+}
+
+.terminal-screen p:last-child {
+    margin-bottom: 0;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 16px;
+    background-color: #33FF33; /* Matches your terminal text color */
+    margin-left: 8px;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

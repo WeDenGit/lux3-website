@@ -10,6 +10,8 @@ body {
     background-color: black;
     height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
@@ -34,10 +36,102 @@ body {
     text-align: center;
 }
 
-.monitor {
+.monitor-container {
+    position: relative;
     max-width: 80%; 
     width: 400px;
+}
+
+.monitor {
+    width: 100%; 
     height: auto;
     display: block;
     object-fit: contain;
+}
+
+.power-button {
+    position: absolute;
+    top: 76%; 
+    left: 50%; 
+    width: 6%; 
+    height: 6%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    cursor: pointer; 
+}
+
+.screen-link {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+    cursor: pointer;
+}
+
+.numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 150px; 
+    color: white;
+    font-family: 'Minecraft', sans-serif; 
+}
+
+.numbers p {
+    margin: 0;
+}
+
+.numbers a {
+    color: inherit;             
+    text-decoration: none;      
+    cursor: default;            
+    outline: none;              
+    -webkit-tap-highlight-color: transparent; 
+}
+
+.je a {
+    color: inherit;             
+    text-decoration: none;      
+    cursor: default;            
+    outline: none;              
+    user-select: none;          
+    -webkit-user-select: none;  
+    -webkit-tap-highlight-color: transparent; 
+}
+
+.one {
+    font-size: 3rem;
+}
+
+.two {
+    font-size: 1.5rem;
+}
+
+.three {
+    font-size: 7rem;
+}
+
+.four {
+    font-size: 4rem;
+}
+
+.five {
+    font-size: 6rem;
+}
+
+.secret-text {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translateX(-50%); 
+    font-family: 'Minecraft', sans-serif; 
+    margin: 0;
+}
+
+.je {
+    font-size: 1.5rem;
+    margin: 0;
+    color: black;
 }

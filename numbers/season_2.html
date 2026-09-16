@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Even when it's all fake.</title>
+        <link rel="stylesheet" href="season_style.css">
+    </head>
+    <body>
+        <div class="content">
+            <img src="images/rift.png" alt="Rift" class="rift-image" id="rift-image">
+        </div>
+        
+        <a href="../seasons.html" class="back-button">BACK</a>
+
+        <audio id="teleport-sound" src="audios/teleporting.mp3"></audio>
+
+        <script>
+            const rift = document.getElementById('rift-image');
+            const audio = document.getElementById('teleport-sound');
+
+            rift.addEventListener('click', () => {
+                if (!audio.paused) {
+                    return;
+                }
+
+                audio.currentTime = 0;
+                audio.play();
+
+                rift.classList.add('squash-stretch');
+
+                rift.addEventListener('animationend', () => {
+                    rift.classList.remove('squash-stretch');
+                }, { once: true });
+            });
+        </script>
+    </body>
+</html>
